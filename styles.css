@@ -1,0 +1,44 @@
+:root {
+    --verde-alien: #4CAF50;
+    --portal-azul: #2196F3;
+    --morty-amarillo: #FFEB3B;
+    --rick-azul-oscuro: #1976D2;
+    --gris-espacial: #607D8B;
+    --purpura-dimensional: #9C27B0;
+    --rojo-portal: #FF5722;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;   
+  }
+
+  body{
+    background-image: url(assets/257-2577078_4k-rick-and-morty.jpg);
+    background-size: cover; /*image occupy all size of display*/
+    background-repeat: no-repeat; /*image no repeat*/
+  }
+
+  .head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3rem 10rem 3rem 10rem;
+     border: 0.2rem solid var(--gris-espacial);
+     border-radius: 2rem;
+     box-shadow: 0 7px 15px var(--verde-alien);
+     backdrop-filter: blur(10px);
+     height: 7rem;
+
+     .logo--1{
+      height: 11rem;
+   }
+
+    .logotype-2{
+      align-items: end;
+      height: 7rem;
+     margin-left: 12rem;
+    }
+  }
+  
+  
