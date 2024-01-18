@@ -27,7 +27,7 @@
      border: 0.2rem solid var(--gris-espacial);
      border-radius: 2rem;
      box-shadow: 0 7px 15px var(--verde-alien);
-     backdrop-filter: blur(10px);
+     backdrop-filter: blur(20px);
      height: 7rem;
 
      .logo--1{
@@ -39,6 +39,49 @@
       height: 7rem;
      margin-left: 12rem;
     }
+  }
+
+  .container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sidebar{
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+    border: 0.2rem solid var(--gris-espacial);
+    border-radius: 2rem;
+    box-shadow: 0 7px 15px var(--verde-alien);
+    margin: 1rem 1rem 3rem 10rem;
+    height: 40rem;
+    width: 15rem;
+    
+  }
+  
+  .tittle--episodes{
+    height: 5rem;
+    margin-left: 1.75rem;
+  }
+   .listEpisodes{
+    gap: 1rem;
+    margin: 1rem 0 1rem 5rem ;
+    font-size: large;
+   }
+  
+  .main-body{
+      margin: 1rem 10rem 3rem 1rem;
+      height: 40rem;
+      width: 52rem;
+      border: 0.2rem solid var(--gris-espacial);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 7px 15px var(--verde-alien);
+      border-radius: 2rem;
+
+      
+   
+   
+    
   }
   
   
