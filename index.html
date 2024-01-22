@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link rel="stylesheet" href="styles.css">
     <title>Rick and Morty API</title>
 </head>
 <body>
-<!--  HERE HEADER-->
-<header class="head">
-    <img src="assets/best logo.png" class="logo--1" alt="logo">
-    <img src="assets/kCyZc7mvqHdeUGpguSGxsWPxqpI.png" class="logotype-2" alt="logotype-rickyAndmMortY">
-</header>
-<!--  HERE HEADER-->
+    <!-- HEADER -->
+    <header class="head">
+        <img src="assets/best logo.png" class="logo--1" alt="logo">
+        <img src="assets/kCyZc7mvqHdeUGpguSGxsWPxqpI.png" class="logotype-2" alt="logotype-rickyAndmMortY">
+    </header>
+    <!-- END HEADER -->
 
-<!--  HERE SIDEBAR-->
-<div class="container">
-    <div class="sidebar">
-         <img src="assets/EPISODES-12-1-2024.png" class="tittle--episodes" alt="img-episodes-rickyAndmMortY">
-         <ul class="listEpisodes" id="listEpisodes"></ul>
-         <button type="button" class="button--load" id="button--load">Load</button>
+    <!-- SIDEBAR -->
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/EPISODES-12-1-2024.png" class="tittle--episodes" alt="img-episodes-rickyAndmMortY">
+            <ul class="listEpisodes" id="listEpisodes"></ul>
+            <button type="button" class="button--load" id="button--load"><span>More episode</span></button>
+        </div>
+    <!-- END SIDEBAR -->
+
+        <!-- MAIN BODY -->
+        <main class="main-body">
+            <section class="content--area" id="content--area"></section>
+        </main>
     </div>
-<!--  HERE SIDEBAR-->
-    <main class="main-body">
-        <ul id="characterList" class="main-list"></ul>
-    </main> 
+    <!-- END MAIN BODY -->
 
-
-
-</div>
-
-
-<!-- index.html -->
-
-
-<script type="module" src="dist/main.js"></script>
-
+    <script type="module" src="dist/main.js"></script>
 </body>
 </html>

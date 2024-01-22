@@ -8,59 +8,56 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const urlEpisodes = 'https://rickandmortyapi.com/api/episode';
-const urlCharacters = 'https://rickandmortyapi.com/api/character';
-const urlLocations = 'https://rickandmortyapi.com/api/location';
-function getEpisodes() {
+const episodesList = document.getElementById('listEpisodes');
+const nextBtn = document.getElementById('button--load');
+printTitle(urlEpisodes);
+function printTitle(url) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const apiEpisode = yield fetch(urlEpisodes);
-            const data = yield apiEpisode.json();
-            const episodes = data.results;
-            episodes.forEach(episode => {
-                const container = document.getElementById('listEpisodes');
-                const liEpisode = document.createElement('li');
-                liEpisode.textContent = `Episode ${episode.id}`;
-                container.appendChild(liEpisode);
-            });
-            return data;
+        const data = yield fetch(url);
+        const JSONdata = yield data.json();
+        const episodes = JSONdata.results;
+        episodes.forEach((episode) => {
+            episodesList.insertAdjacentHTML('beforeend', `<li id='${episode.episode}' episodeUrl='${episode.url}'> ${episode.name}</li>`);
+            const clickEpisode = document.getElementById(`${episode.episode}`);
+            clickEpisode.addEventListener('click', printInfoEpi);
+        });
+        if (JSONdata.info.next) {
+            nextBtn.addEventListener('click', () => {
+                printTitle(JSONdata.info.next);
+            }, { once: true });
         }
-        catch (error) {
-            throw new Error('Su puta madre');
+        else {
+            nextBtn.remove();
         }
     });
 }
-getEpisodes()
-    .then((dataResult) => {
-    getMoreTittle(dataResult);
-});
-function getMoreTittle(dataResult) {
-    const buttonLoadEpisodes = document.getElementById('button--load');
-    let checkEvent = true;
-    buttonLoadEpisodes.addEventListener('click', () => {
-        if (checkEvent) {
-            printMoreTitle(dataResult);
-            checkEvent = false;
-        }
-    });
-}
-function printMoreTitle(dataResult) {
+function printInfoEpi(click) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            if (dataResult.info.next) {
-                const responseNextEpi = yield fetch(dataResult.info.next);
-                const data = yield responseNextEpi.json();
-                const episode = data.results;
-                episode.forEach(episode => {
-                    const container = document.getElementById('listEpisodes');
-                    const liEpisode = document.createElement('li');
-                    liEpisode.textContent = episode.name;
-                    container.appendChild(liEpisode);
-                });
-            }
-        }
-        catch (error) {
-            throw new Error("eeeeeeeee");
-        }
+        const target = click.target;
+        const urlEpisode = target.getAttribute('episodeUrl');
+        console.log(urlEpisode);
+        const data = yield fetch(urlEpisode);
+        const episodeInfo = yield data.json();
+        const displayEpisodeInfo = `<div class="title">
+    <p>${episodeInfo.name}</p>
+    <p>${episodeInfo.air_date}</p>
+    <p>${episodeInfo.episode}</p>
+    </div>`;
+        const printEpisodeInfo = document.getElementById('content--area');
+        printEpisodeInfo.innerHTML = displayEpisodeInfo;
+        const characters = episodeInfo.characters;
+        characters.forEach((urlCharacter) => __awaiter(this, void 0, void 0, function* () {
+            const data = yield fetch(urlCharacter);
+            const characterinfo = yield data.json();
+            const displayCharacterInfo = `<div class="card">
+    <p>${characterinfo.name}</p>
+    <p>${characterinfo.status}</p>
+    <p>${characterinfo.species}</p>
+    <p>${characterinfo.gender}</p>
+    <img src='${characterinfo.image}'>
+    </div>`;
+            printEpisodeInfo.insertAdjacentHTML('beforeend', displayCharacterInfo);
+        }));
     });
 }
 export {};
