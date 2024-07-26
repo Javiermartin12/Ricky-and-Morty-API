@@ -2,7 +2,7 @@
 
 An application that uses the Rick and Morty API to display information about characters and episodes.
 
-<img src="./assets/Captura de pantalla 2024-07-26 a las 10.00.24.png" height="600rem" width="800rem" alt="Ricky and Morty">
+<img src="./assets/Captura de pantalla 2024-07-26 a las 10.00.24.png" height="500rem" width="850rem" alt="Ricky and Morty">
 ## Content
 
 1. [Use](#use)
