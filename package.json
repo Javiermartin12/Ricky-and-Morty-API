@@ -1,0 +1,23 @@
+{
+  "name": "ricky-and-morty-project",
+  "version": "1.0.0",
+  "description": "An application that uses the Rick and Morty API to display information about characters and episodes.",
+  "main": "index.js",
+  "dependencies": {
+    "esbuild": "^0.20.2",
+    "nanoid": "^3.3.7",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.38",
+    "rollup": "^4.13.1",
+    "source-map-js": "^1.2.0",
+    "vite": "^5.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

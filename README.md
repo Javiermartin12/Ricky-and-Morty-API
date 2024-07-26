@@ -13,6 +13,8 @@ An application that uses the Rick and Morty API to display information about cha
 To run the application you just have to download it to your VS and open it with
  LIVE SERVER and you will be able to see the lists of the episodes and characters.
 
+ Also you can use 'npm run dev' to run with Vite.
+
 
 ## Contribute
 
