@@ -30,7 +30,7 @@ body {
   display: flex;
   align-items: center;
   border: 0.15rem solid var(--gris-espacial);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   backdrop-filter: blur(20px);
   height: 11rem;
   width: 80%;
@@ -54,7 +54,7 @@ body {
   flex-direction: row;
   justify-content: center;
   width: 80%;
-  height: 80%;
+  
 }
 
 
@@ -65,9 +65,9 @@ body {
   padding: 0.5rem;
   backdrop-filter: blur(20px);
   border: 0.15rem solid var(--gris-espacial);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   height: 33rem;
-  width: 50%;
+  width: 30%;
 }
 
  .tittle--episodes {
@@ -137,16 +137,14 @@ button:hover::before {
 
 /* Main body styles */
 .main-body {
-
   padding: 1rem;
   height: 32rem;
   width: 80%;
   border: 0.15rem solid var(--gris-espacial);
   backdrop-filter: blur(20px);
-
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   overflow-y: scroll;
-  
+  margin-left: 1rem;
 }
 
 /* Content area styles */
